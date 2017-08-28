@@ -1,4 +1,4 @@
-# Consulta NF-e <span id="trialSpan"></span>
+# Datavalid <span id="trialSpan"></span>
 
 API para acesso a Notas Fiscais Eletrônicas diretamente das bases da Receita Federal do Brasil através de sua chave de acesso.
 
@@ -6,9 +6,9 @@ A plataforma APIGOV (Plataforma que contempla todas as API's disponibilizadas e 
 
 <img title="Processo de autenticação e autorização APIS" src="https://raw.githubusercontent.com/devserpro/consulta-cpf/master/img/oauth.png" style="width=50%;" />
 
-## Como fazer consultas a Consulta NF-e
+## Como fazer consultas ao Datavalid
 
-Para consumir a Consulta NF-e, você deverá utilizar os dois códigos (Consumer Key e Consumer Secret) disponibilizados na Área do Cliente. Esses códigos servem para identificar o contrato e deverão ser informados sempre que uma consulta for realizada.
+Para consumir o Datavalid, você deverá utilizar os dois códigos (Consumer Key e Consumer Secret) disponibilizados na Área do Cliente. Esses códigos servem para identificar o contrato e deverão ser informados sempre que uma consulta for realizada.
 Exemplos de códigos: 
 
 **Consumer Key**: djaR21PGoYp1iyK2n2ACOH9REdUb
@@ -56,7 +56,7 @@ Atentar que sempre que o token de acesso temporário expirar, o gateway vai reto
 De posse do Token de Acesso, faça uma requisição via GET ao gateway informando os parâmetros da API. Exemplo:
 
 ```curlBearer
-curl -X GET --header "Accept: application/json" --header "Authorization: Bearer c66a7de41c96f7008a0c397dc588b6d7" "https://apigateway.serpro.gov.br/nfe/v1/12345678912345678912345678912345678912345678"
+curl -X GET --header "Accept: application/json" --header "Authorization: Bearer c66a7de41c96f7008a0c397dc588b6d7" "https://apigateway.serpro.gov.br/datavalid/v1/12345678912345678912345678912345678912345678"
 ```
 
 No exemplo acima foram utilizados os seguintes parametros:
@@ -65,7 +65,7 @@ No exemplo acima foram utilizados os seguintes parametros:
 
 **[HEADER] Authorization: Bearer <span class="bearer">c66a7de41c96f7008a0c397dc588b6d7</span>** - Informamos o token de acesso recebido
 
-**[GET] https://apigateway.serpro.gov.br/nfe<span id="trialSpanUrl"></span>/<span id="trialSpanVersao"></span>/12345678912345678912345678912345678912345678**: chamamos a url da API informando a chave de acesso da Nota Fiscal Eletrônica. No caso a url é "nfe<span id="trialSpanUrl2"></span>/<span id="trialSpanVersao2"></span>/{Chave de Acesso da NF-e}"
+**[GET] https://apigateway.serpro.gov.br/datavalid<span id="trialSpanUrl"></span>/<span id="trialSpanVersao"></span>/12345678912345678912345678912345678912345678**: chamamos a url da API informando a chave de acesso da Nota Fiscal Eletrônica. No caso a url é "datavalid<span id="trialSpanUrl2"></span>/<span id="trialSpanVersao2"></span>/{Chave de Acesso da NF-e}"
 
 Nesse caso, espera-se que a resposta seja a seguinte:
 
@@ -270,7 +270,7 @@ Nesse caso, espera-se que a resposta seja a seguinte:
 }
 ```
 
-```trialSpanNFEs
+```trialSpandatavalids
 Chaves de Acesso NF-e para ambiente TRIAL:
 
 1) 35170608530528000184550000000154301000771561
