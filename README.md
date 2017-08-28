@@ -1,6 +1,6 @@
 # Datavalid <span id="trialSpan"></span>
 
-API para acesso a Notas Fiscais Eletrônicas diretamente das bases da Receita Federal do Brasil através de sua chave de acesso.
+Solução de análise de informações que garante autenticidade e confiabilidade aos dados em tempo real.
 
 A plataforma APIGOV (Plataforma que contempla todas as API's disponibilizadas e comercializadas pelo SERPRO) utiliza o protocolo Oauth2 - Client Credential Grant ([https://tools.ietf.org/html/rfc6749#section-4.4](https://tools.ietf.org/html/rfc6749#section-4.4)) para realizar a autenticação e autorização de acesso para consumo das API's contratadas, conforme figura abaixo:
 
@@ -16,7 +16,7 @@ Exemplos de códigos:
 **Consumer Secret**: ObRsAJWOL4fv2Tp27D1vd8fB3Ote
 
 ### 1 – Como solicitar o Token de Acesso (Bearer)
-Para consultar a API, é necessário obter um token de acesso temporário (Bearer). Esse token possui um tempo de validade e sempre que expirado, este passo de requisição de um novo token de acesso deve ser repetido. 
+Para consultar a Datavalid, é necessário obter um token de acesso temporário (Bearer). Esse token possui um tempo de validade e sempre que expirado, este passo de requisição de um novo token de acesso deve ser repetido. 
 
 Para solicitar o token temporário é necessário realizar uma requisição HTTP POST para o endpoint Token https://apigateway.serpro.gov.br/token, informando as credenciais de acesso(consumerKey:consumerSecret) no HTTP Header Authorization, no formato base64, conforme exemplo abaixo. As credenciais de acesso devem ser obtidas a partir do portal do cliente Serpro - https://minhaconta.serpro.gov.br
 
@@ -51,9 +51,9 @@ Como resultado, o endpoint informará o token de acesso a API, no campo access_t
 Atentar que sempre que o token de acesso temporário expirar, o gateway vai retornar um _HTTP CODE 401_ após realizar uma requisição para uma API. Neste caso, deve ser repetido o passo anterior (**Como solicitar o Token de Acesso (Bearer)**) para geração de um novo token de acesso temporário.
 
 
-### 2 – Como realizar a consulta à API
+### 2 – Como realizar a consulta ao Datavalid
 
-De posse do Token de Acesso, faça uma requisição via GET ao gateway informando os parâmetros da API. Exemplo:
+De posse do Token de Acesso, faça uma requisição via POST ao gateway informando os parâmetros do Datavalid. Exemplo:
 
 ```curlBearer
 curl -X GET --header "Accept: application/json" --header "Authorization: Bearer c66a7de41c96f7008a0c397dc588b6d7" "https://apigateway.serpro.gov.br/datavalid/v1/12345678912345678912345678912345678912345678"
@@ -65,7 +65,7 @@ No exemplo acima foram utilizados os seguintes parametros:
 
 **[HEADER] Authorization: Bearer <span class="bearer">c66a7de41c96f7008a0c397dc588b6d7</span>** - Informamos o token de acesso recebido
 
-**[GET] https://apigateway.serpro.gov.br/datavalid<span id="trialSpanUrl"></span>/<span id="trialSpanVersao"></span>/12345678912345678912345678912345678912345678**: chamamos a url da API informando a chave de acesso da Nota Fiscal Eletrônica. No caso a url é "datavalid<span id="trialSpanUrl2"></span>/<span id="trialSpanVersao2"></span>/{Chave de Acesso da NF-e}"
+**[GET] https://apigateway.serpro.gov.br/datavalid<span id="trialSpanUrl"></span>/<span id="trialSpanVersao"></span>/12345678912345678912345678912345678912345678**: chamamos a url do Datavalid passando os parâmetros para verificação de autenticidade."
 
 Nesse caso, espera-se que a resposta seja a seguinte:
 
