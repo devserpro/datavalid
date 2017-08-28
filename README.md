@@ -9,7 +9,7 @@ A plataforma APIGOV (Plataforma que contempla todas as API's disponibilizadas e 
 ## Como fazer consultas a Consulta NF-e
 
 Para consumir a Consulta NF-e, você deverá utilizar os dois códigos (Consumer Key e Consumer Secret) disponibilizados na Área do Cliente. Esses códigos servem para identificar o contrato e deverão ser informados sempre que uma consulta for realizada.
-Exemplos de códigos:
+Exemplos de códigos: 
 
 **Consumer Key**: djaR21PGoYp1iyK2n2ACOH9REdUb
 
