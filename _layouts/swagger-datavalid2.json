@@ -8,45 +8,6 @@
     ["https","http"],
 	"basePath":"/datavalid/vbeta1",
 	"paths":{
-	  "/validate/plans/cadastro/pf":{
-	    "post":{
-		  "consumes":["application/json"],
-	      "produces":["application/json"],
-		  "parameters":[{
-		    "in":"body",
-			"name":"payload",
-			"description":"Serviço que valida dados cadastrais de uma Pessoa Física, onde key é o número do CPF.",
-			"required":true,
-			"schema":{"$ref":"#/definitions/ValidateInputCadastroPF"}}],
-		   "responses":{
-		     "200":{
-			   "description":"Retorna validação de dados cadastrais de Pessoa Física",
-			   "schema":{"$ref":"#/definitions/ValidateResultCadastroPF"}},
-			 "422":{
-			   "description":"A requisição possui algum erro de semântica. Os erros são descritos na resposta.",
-			   "schema":{"$ref":"#/definitions/UnprocessableEntity"}}},
-		   "x-auth-type":"Application & Application User",
-		   "x-throttling-tier":"Unlimited"}},
-	  "/validate/plans/cadastro/pj":{
-	    "post":{
-		  "consumes":["application/json"],
-		  "produces":["application/json"],
-		  "parameters":[{
-		    "in":"body",
-			"name":"payload",
-			"description":"Serviço que valida dados cadastrais de uma Pessoa Jurídica, onde key é o número do CNPJ.",
-			"required":true,
-			"schema":{"$ref":"#/definitions/ValidateInputPJ"}}],
-	      "responses":{
-		    "200":{
-			  "description":"Retorna validação de dados cadastrais de Pessoa Jurídica",
-			  "schema":{
-			    "$ref":"#/definitions/ValidateResultPJ"}},
-			   "422":{
-			     "description":"A requisição possui algum erro de semântica. Os erros são descritos na resposta.",
-				 "schema":{"$ref":"#/definitions/UnprocessableEntity"}}},
-		  "x-auth-type":"Application & Application User",
-		  "x-throttling-tier":"Unlimited"}},
 	  "/validate/plans/basico/pf":{
 	    "post":{
 		  "consumes":["application/json"],
